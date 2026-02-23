@@ -1,0 +1,71 @@
+{
+  "allowedPaths": [
+    "./workspace"
+  ],
+  "deniedPaths": [
+    "/system",
+    "/etc",
+    "C:\\Windows",
+    "C:\\Program Files",
+    "/usr/bin",
+    "/bin"
+  ],
+  "allowedCommands": [
+    "npm",
+    "yarn",
+    "pnpm",
+    "git",
+    "node",
+    "python",
+    "python3",
+    "pip",
+    "pip3",
+    "tsc",
+    "vite",
+    "mkdir",
+    "touch",
+    "cat",
+    "ls",
+    "dir",
+    "cd"
+  ],
+  "deniedCommands": [
+    "rm -rf",
+    "del /f",
+    "format",
+    "dd",
+    "shutdown",
+    "reboot",
+    "init 0"
+  ],
+  "maxFileSizeMB": 10,
+  "allowedExtensions": [
+    ".js",
+    ".ts",
+    ".jsx",
+    ".tsx",
+    ".json",
+    ".md",
+    ".txt",
+    ".html",
+    ".css",
+    ".scss",
+    ".py",
+    ".sh",
+    ".yml",
+    ".yaml",
+    ".env.example",
+    ".gitignore"
+  ],
+  "criticalActions": {
+    "delete": true,
+    "execute": true,
+    "apiCall": false,
+    "gitPush": true,
+    "installPackage": false
+  },
+  "apiRateLimits": {
+    "maxRequestsPerMinute": 60,
+    "maxRequestsPerHour": 1000
+  }
+}

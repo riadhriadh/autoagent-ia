@@ -1,0 +1,9 @@
+{
+  "workspacePath": "./workspace",
+  "modelName": "phi3:mini",
+  "maxRetries": 3,
+  "maxConcurrentTasks": 3,
+  "taskTimeout": 300000,
+  "enableLLMCache": true,
+  "logLevel": "info"
+}
