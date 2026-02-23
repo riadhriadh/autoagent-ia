@@ -5,6 +5,7 @@ Agent IA autonome local capable de développer des applications de manière auto
 ## 🎯 Caractéristiques
 
 - ✅ **Multi-Provider LLM** - Supporte Ollama (local), OpenAI GPT-4, Claude, Azure OpenAI
+- ✅ **Interface Web** - Dashboard web avec authentification pour gérer l'agent
 - ✅ **Léger** - Optimisé pour 8GB RAM avec Ollama Phi-3 mini (2GB)
 - ✅ **Autonome** - Analyse, planifie et exécute des tâches complexes
 - ✅ **Sécurisé** - Système de permissions configurables et approbations
@@ -88,10 +89,31 @@ npm run setup
 # Mode développement (avec rechargement automatique)
 npm run dev
 
+# Interface Web uniquement
+npm run web
+
 # Mode production
 npm run build
 npm start
 ```
+
+### Interface Web 🌐
+
+Accédez au dashboard web sur **http://localhost:3000**
+
+1. **Connectez-vous** avec les identifiants configurés dans `.env`:
+   ```env
+   WEB_USERNAME=admin
+   WEB_PASSWORD=admin123
+   ```
+
+2. **Créez des tâches** via l'interface graphique
+
+3. **Suivez l'exécution** en temps réel
+
+4. **Approuvez les actions** critiques via des boutons
+
+📖 **[Guide complet de l'interface web](docs/WEB_INTERFACE.md)**
 
 ### Utiliser le CLI
 
@@ -176,9 +198,13 @@ Voir [docs/CONFIGURATION.md](docs/CONFIGURATION.md) pour plus de détails.
 
 ## 📖 Documentation
 
-- [Guide de Configuration](docs/CONFIGURATION.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Setup WhatsApp](docs/WHATSAPP_SETUP.md)
+- [🚀 Guide de Démarrage Rapide](QUICKSTART.md)
+- [🌐 Interface Web](docs/WEB_INTERFACE.md)
+- [🤖 Providers LLM](docs/LLM_PROVIDERS.md)
+- [⚙️ Configuration](docs/CONFIGURATION.md)
+- [🏗️ Architecture](docs/ARCHITECTURE.md)
+- [📱 Setup WhatsApp](docs/WHATSAPP_SETUP.md)
+- [💡 Exemples d'Usage](examples/USAGE.md)
 - [Exemples d'Usage](examples/)
 
 ## 🧪 Tests
