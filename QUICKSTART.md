@@ -4,11 +4,54 @@ Démarrez avec AutoAgent IA en 5 minutes!
 
 ## ⚡ Installation Express
 
-### 1. Prérequis
+### 1. Choisir votre Provider LLM
+
+#### Option A: Ollama (Local - Gratuit) 🏠
 
 Installez Ollama:
 - **macOS/Linux:** `curl https://ollama.ai/install.sh | sh`
 - **Windows:** Téléchargez depuis https://ollama.ai
+
+Puis téléchargez un modèle:
+```bash
+ollama pull phi3:mini  # Léger (2GB) - Recommandé pour 8GB RAM
+# ou
+ollama pull llama3:8b  # Plus performant (5GB) - Pour 16GB+ RAM
+```
+
+Dans `.env`:
+```env
+LLM_PROVIDER=ollama
+OLLAMA_MODEL=phi3:mini
+```
+
+#### Option B: OpenAI GPT-4 (Cloud - Payant) 🤖
+
+1. Obtenez une clé API: https://platform.openai.com
+2. Ajoutez $5-20 de crédits
+
+Dans `.env`:
+```env
+LLM_PROVIDER=openai
+OPENAI_API_KEY=sk-proj-...
+OPENAI_MODEL=gpt-4-turbo-preview
+```
+
+#### Option C: Claude (Cloud - Payant) 🧠
+
+1. Obtenez une clé API: https://console.anthropic.com
+2. Ajoutez des crédits
+
+Dans `.env`:
+```env
+LLM_PROVIDER=claude
+CLAUDE_API_KEY=sk-ant-...
+CLAUDE_MODEL=claude-2.1
+```
+
+**Note:** Utilise Claude 2.x (ancienne API). Pour Claude 3.5, une mise à jour future du SDK sera nécessaire.
+
+📖 **[Guide complet des providers](docs/LLM_PROVIDERS.md)**
 
 ### 2. Setup du Projet
 
@@ -16,14 +59,11 @@ Installez Ollama:
 # Installer les dépendances
 npm install
 
-# Télécharger le modèle IA (~2GB)
-ollama pull phi3:mini
-
 # Configurer
 npm run setup
 cp .env.example .env
 
-# Éditer .env si nécessaire
+# Éditer .env avec votre provider choisi
 nano .env
 ```
 

@@ -24,6 +24,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0",
     "@langchain/community": "^0.0.38",
     "@langchain/core": "^0.1.40",
     "axios": "^1.6.7",
@@ -32,6 +33,7 @@
     "dotenv": "^16.4.5",
     "langchain": "^0.1.25",
     "ollama": "^0.5.0",
+    "openai": "^4.47.0",
     "simple-git": "^3.22.0",
     "whatsapp-web.js": "^1.23.1",
     "qrcode-terminal": "^0.12.0",

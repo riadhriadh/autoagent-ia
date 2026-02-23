@@ -4,8 +4,8 @@ Agent IA autonome local capable de développer des applications de manière auto
 
 ## 🎯 Caractéristiques
 
-- ✅ **100% Local** - Fonctionne avec des modèles LLM locaux (Ollama)
-- ✅ **Léger** - Optimisé pour 8GB RAM avec Phi-3 mini (2GB)
+- ✅ **Multi-Provider LLM** - Supporte Ollama (local), OpenAI GPT-4, Claude, Azure OpenAI
+- ✅ **Léger** - Optimisé pour 8GB RAM avec Ollama Phi-3 mini (2GB)
 - ✅ **Autonome** - Analyse, planifie et exécute des tâches complexes
 - ✅ **Sécurisé** - Système de permissions configurables et approbations
 - ✅ **WhatsApp** - Notifications et contrôle via WhatsApp
@@ -15,21 +15,48 @@ Agent IA autonome local capable de développer des applications de manière auto
 ## 📋 Prérequis
 
 - **Node.js** 20.x ou supérieur
-- **Ollama** installé et en cours d'exécution
-- **8GB RAM minimum** (16GB recommandé)
+- **Un Provider LLM** (au choix):
+  - **Ollama** (gratuit, local, 8GB RAM minimum)
+  - **OpenAI API** (payant, cloud, $5-20/mois)
+  - **Claude API** (payant, cloud, $5-20/mois)
+  - **Azure OpenAI** (entreprise)
 - **WhatsApp** (optionnel, pour les notifications)
 
 ## 🚀 Installation
 
-### 1. Installer Ollama et le modèle
+### Option 1: Ollama (Local - Recommandé pour débuter)
 
 ```bash
-# Télécharger Ollama depuis https://ollama.ai
-# Puis télécharger le modèle:
-ollama pull phi3:mini
+# 1. Télécharger Ollama depuis https://ollama.ai
+# 2. Télécharger le modèle:
+ollama pull phi3:mini  # Léger, 2GB
+# ou
+ollama pull llama3:8b  # Plus performant, 5GB
 ```
 
-### 2. Cloner et configurer le projet
+### Option 2: OpenAI GPT-4
+
+```bash
+# Obtenir une clé API sur https://platform.openai.com
+# Ajouter au fichier .env:
+# LLM_PROVIDER=openai
+# OPENAI_API_KEY=sk-proj-...
+# OPENAI_MODEL=gpt-4-turbo-preview
+```
+
+### Option 3: Claude (Anthropic)
+
+```bash
+# Obtenir une clé API sur https://console.anthropic.com
+# Ajouter au fichier .env:
+# LLM_PROVIDER=claude
+# CLAUDE_API_KEY=sk-ant-...
+# CLAUDE_MODEL=claude-3-5-sonnet-20241022
+```
+
+📖 **[Guide complet des providers LLM](docs/LLM_PROVIDERS.md)**
+
+### Configuration du Projet
 
 ```bash
 git clone <repo-url>
